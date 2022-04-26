@@ -11,11 +11,14 @@ package poo;
 public class Uso_coche {
     public static void main(String[] args) {
         
-        Coche Renault = new Coche();
+        Coche micoche = new Coche();
         
-        System.out.println("Este coche tiene " + Renault.ruedas + " ruedas.");
+        micoche.establece_color("amarillo");
+        
+        System.out.println(micoche.dime_datos_generales());
         
         
+        System.out.println(micoche.dime_color());
         
     }
 }
