@@ -52,13 +52,58 @@ public class Coche {
     }
     
     
-    public void configura_asientos(String asientos_cuero){
+    public void configura_asientos(String asientos_cuero){ //setter
     
-    this.asientos_cuero = asientos_cuero;
+    if(asientos_cuero.equalsIgnoreCase("si")){
+        
+        this.asientos_cuero = true;
+    
+    }else{
+    
+    this.asientos_cuero = false;
+    }
         
     }
     
+    public String dime_asientos(){//getter
     
+    if(asientos_cuero == true){
+    
+    return "el coche tiene asientos de cuero";
+    }else{
+    return "el coche tiene asientos de serie";
+    
+    }
+    
+    
+    }
+    
+    public void configura_climatizador( String climatizador){ //setter
+    
+    if(climatizador.equalsIgnoreCase("si")){
+    
+    this.climatizador = true;
+    
+    }else{
+    
+    this.climatizador = false;
+    }
+    
+    }
+    
+    public String dimeClimatizador(){// getter
+    
+    if(climatizador){
+    
+    return "el coche incorpora climatizador";
+    } else{
+    
+    return "el coche trae aire acondicionado";
+    
+    }
+    
+    
+    }
     
     
 }

@@ -17,8 +17,11 @@ public class Uso_coche {
         
         System.out.println(micoche.dime_datos_generales());
         
-        
         System.out.println(micoche.dime_color());
+        
+        micoche.configura_asientos("SI");
+        
+        System.out.println(micoche.dime_asientos());
         
     }
 }
