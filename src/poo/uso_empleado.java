@@ -107,4 +107,6 @@ class Empleado{
     private double sueldo;
     private Date  altaContrato;
     
+    private int locurta;
+    
 }
