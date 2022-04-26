@@ -52,5 +52,13 @@ public class Coche {
     }
     
     
+    public void configura_asientos(String asientos_cuero){
+    
+    this.asientos_cuero = asientos_cuero;
+        
+    }
+    
+    
+    
     
 }
