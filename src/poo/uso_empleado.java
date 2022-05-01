@@ -36,12 +36,13 @@ public class uso_empleado {
         + empleado3.dameSueldo() + "Fecha de alta"+ " " + empleado3.dameFechaContrato());
         */
    
-   //aqui estamos creando un array de clase empleado     
-   Empleado[] misempleados = new Empleado[3];
+   //aqui estamos creando un array de clase empleado    
+   Empleado[] misempleados = new Empleado[4];
    
    misempleados[0] = new Empleado("sebas",95000,2004,13,22);
    misempleados[1] = new Empleado("pol",75000,2002,13,25);
    misempleados[2] = new Empleado("filipo",75000,2005,13,27);
+   misempleados[3] = new Empleado("sebastian");
    
 // bucle for mejorado
    for(Empleado e: misempleados){
@@ -74,6 +75,13 @@ class Empleado{
         GregorianCalendar calendario = new GregorianCalendar(agno,mes-1 , dia);
         altaContrato = calendario.getTime();
         
+    }
+    
+    public Empleado(String nom){
+    
+    this(nom,60000,2002,13,25);
+    
+    
     }
 
     public String dameNombre(){ //getter
