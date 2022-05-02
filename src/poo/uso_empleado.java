@@ -118,3 +118,40 @@ class Empleado{
     
     
 }
+
+
+class Jefatura extends Empleado{
+
+    public Jefatura(String nom,double sue,int agno,int mes, int dia){
+        
+        super(nom,sue,agno,mes,dia);
+    
+    
+    }
+    
+    public void esatbleceIncentivo(double b){ //metodo setter
+    
+    this.incentivo = b;
+    
+    }
+    
+   @Override
+   public double dameSueldo(){
+    
+    double sueldoJefe = super.dameSueldo(); //accesdemos a la clase padre
+    
+    return sueldoJefe + incentivo;
+    
+    }
+    
+    
+    
+    
+    private double incentivo;
+    
+    
+    
+
+
+
+}
