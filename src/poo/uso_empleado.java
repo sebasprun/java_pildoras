@@ -36,16 +36,31 @@ public class uso_empleado {
         + empleado3.dameSueldo() + "Fecha de alta"+ " " + empleado3.dameFechaContrato());
         */
    
-   //aqui estamos creando un array de clase empleado    
-   Empleado[] misempleados = new Empleado[4];
+Jefatura jefe_RRHH = new Jefatura("Sebas",55000,2013,9,25);   
+
+jefe_RRHH.esatbleceIncentivo(2600);
+
+
+
+//aqui estamos creando un array de clase empleado    
+   Empleado[] misempleados = new Empleado[6];
    
    misempleados[0] = new Empleado("sebas",95000,2004,13,22);
    misempleados[1] = new Empleado("pol",75000,2002,13,25);
    misempleados[2] = new Empleado("filipo",75000,2005,13,27);
    misempleados[3] = new Empleado("sebastian");
+   misempleados[4] = jefe_RRHH; //polimorfismo en accion / principio de sustitución porque es un objeto de la sublase el principio de (es un)
+   misempleados[5] = new Jefatura("maria",95000,1999,5,26); //lo mismo que arriba
+   
+   Jefatura jefa_finanzas = (Jefatura) misempleados[5]; //casting regla es un  
+   
+   jefa_finanzas.esatbleceIncentivo(5000);
+   
+   
+   
    
 // bucle for mejorado
-   for(Empleado e: misempleados){
+   for(Empleado e: misempleados){ //enmpleado porqu es de tipo empleado
     
        e.subeSueldo(5);
   
@@ -90,7 +105,7 @@ class Empleado{
     
     }
     
-    public double dameSueldo(){ //getter
+    public  double dameSueldo(){ //getter
     
     return sueldo;
     }
@@ -120,7 +135,7 @@ class Empleado{
 }
 
 
-class Jefatura extends Empleado{
+class Jefatura extends Empleado{ //se detiene la herencia con final
 
     public Jefatura(String nom,double sue,int agno,int mes, int dia){
         
@@ -131,7 +146,7 @@ class Jefatura extends Empleado{
     
     public void esatbleceIncentivo(double b){ //metodo setter
     
-    this.incentivo = b;
+    incentivo = b;
     
     }
     
@@ -145,13 +160,14 @@ class Jefatura extends Empleado{
     }
     
     
-    
+   
     
     private double incentivo;
     
-    
-    
-
-
 
 }
+
+
+
+
+

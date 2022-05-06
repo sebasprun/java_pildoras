@@ -11,7 +11,7 @@ package poo;
 public class pruebas {
     public static void main(String[] args) {
        
-     Empleados trabajador1 = new Empleados("sebas");   
+     Empleados trabajador1 = new Empleados("Jordan");   
      Empleados trabajador2 = new Empleados("pol");
      Empleados trabajador3 = new Empleados("Iván");
      Empleados trabajador4 = new Empleados("Billy");
