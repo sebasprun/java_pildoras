@@ -14,6 +14,19 @@ import java.util.GregorianCalendar;
 public class uso_Persona {
     public static void main(String[] args) {
         
+     persona[] laspersonas = new persona[2];
+     
+     laspersonas[0] = new Empleado2("luis conde",50000,2009,02,25);
+     laspersonas[1] = new alumno("ana lopez", "biológicas");
+        
+     for (persona p: laspersonas){
+     
+         System.out.println(p.damenombre() + ", " + p.damedescripcion());
+     
+     }
+        
+        
+        
     }
 }
 
@@ -88,13 +101,19 @@ class Empleado2 extends persona{
     
 }
 
-class alumno extends persona{
+class  alumno extends persona{
 
 public alumno(String nom,String car){
 
 super(nom);
 
 carrera = car;
+
+}
+@Override
+public String damedescripcion(){
+
+return "este alumno esta estudianod la carrera de " + carrera;
 
 }
 
