@@ -21,7 +21,7 @@ public class uso_Persona {
         
      for (persona p: laspersonas){
      
-         System.out.println(p.damenombre() + ", " + p.damedescripcion());
+         System.out.println(p.damenombre() + ", " + p.damedescripcion() );
      
      }
         

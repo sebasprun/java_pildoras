@@ -4,8 +4,10 @@
  */
 package poo;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
 
 
 
@@ -56,6 +58,17 @@ jefe_RRHH.esatbleceIncentivo(2600);
    
    jefa_finanzas.esatbleceIncentivo(5000);
    
+ 
+   
+        System.out.println(jefa_finanzas.tomardecisiones("dar mas dias de vacaciones a los empleados"));
+   
+        
+
+ 
+        System.out.println("El Jefe " + jefa_finanzas.dameNombre() + "tiene un bonus de : " + jefa_finanzas.establece_bonus(500) );
+   
+        System.out.println(misempleados[3].dameNombre() + " tiene un bonus de: " + misempleados[3].establece_bonus(200));
+   
    
    
    
@@ -65,6 +78,12 @@ jefe_RRHH.esatbleceIncentivo(2600);
        e.subeSueldo(5);
   
    }
+   
+   Arrays.sort(misempleados);
+   
+   
+   
+   
     
    for(Empleado e: misempleados){
    
@@ -81,8 +100,7 @@ jefe_RRHH.esatbleceIncentivo(2600);
     
 }
 
-
-class Empleado{
+class Empleado implements Comparable, Trabajadores{
     public Empleado(String nom, double sue,int agno, int mes, int dia){
     
         nombre = nom;
@@ -125,17 +143,46 @@ class Empleado{
     }
     
     
+@Override    
+    
+    public int compareTo(Object miObjeto){
+    
+    Empleado otroEmpleado = (Empleado) miObjeto;
+    
+    if(this.sueldo<otroEmpleado.sueldo){
+    
+    return -1;
+    
+    }
+    if(this.sueldo > otroEmpleado.sueldo){
+    
+    return 1;
+    }    
+    
+ return 0;     
+            
+    }
     
     private String nombre;
     private double sueldo;
     private Date  altaContrato;
     
-    
-    
+   
+@Override    
+  public double establece_bonus(double gratificacion){
+  
+  
+  return Trabajadores.bonus_base + gratificacion;
+  
+  
+  
+  }  
+   
+  
 }
 
 
-class Jefatura extends Empleado{ //se detiene la herencia con final
+class Jefatura extends Empleado implements Jefes{ //se detiene la herencia con final
 
     public Jefatura(String nom,double sue,int agno,int mes, int dia){
         
@@ -149,6 +196,24 @@ class Jefatura extends Empleado{ //se detiene la herencia con final
     incentivo = b;
     
     }
+ @Override   
+    public String tomardecisiones(String decision){
+    
+    return "un miembro de la dirección ha tomado la decision de: " + decision;
+    
+    
+    }
+    
+@Override
+
+public double establece_bonus(double gratificacion){
+
+ double prima = 2000;
+ 
+ return Trabajadores.bonus_base + gratificacion + prima;
+
+}
+  
     
    @Override
    public double dameSueldo(){

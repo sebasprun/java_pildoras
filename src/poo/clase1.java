@@ -10,7 +10,7 @@ package poo;
  */
 public class clase1 {
     
-    int mivar= 5;
+   protected  int mivar= 5;
     
     int mivar2 = 7;
     
