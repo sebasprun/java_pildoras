@@ -26,8 +26,15 @@ class miMarco extends JFrame{
 
 public miMarco(){
     
-    setSize(500,300);
-
+    //setSize(500,300);
+    //setLocation(0,0);
+    setBounds(800,600,800,600);
+   // setResizable(false);
+    setExtendedState(6);
+    setTitle("MI ventana");
+    
+    
+ 
 }
 
 }
